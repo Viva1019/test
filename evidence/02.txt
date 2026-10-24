@@ -1,0 +1,39 @@
+  794  git status
+  795  git branch -a
+  796  ls -l soft
+  797  cat soft
+  798  history
+  799  ls -l soft
+  800  cat soft
+  801  git fetch origin
+  802  cd ~/git-practice
+  803  git fetch origin
+  804  git diff -- answers/01.md
+  805  git status
+  806  git switch base/task-02
+  807  git restore --source=origin/feature/task-01 -- answers/01.md
+  808  git status
+  809  git diff -- answers/01.md
+  810  git reset --hard origin/feature/task-01
+  811  git status
+  812  git switch base/task-02
+  813  git log --oneline --decorate -5
+  814  git switch base/task-02
+  815  cat message.txt
+  816  nano message.txt
+  817  git add message.txt
+  818  git commit -m "task 02 - update base message"
+  819  git push origin base/task-02
+  820  git switch feature/task-02
+  821  git tag evidence/02-before
+  822  git push origin evidence/02-before
+  823  git rebase base/task-02
+  824  git status
+  825  nano message.txt
+  826  git add message.txt
+  827  git rebase --continue
+  828  git log --oneline --graph --decorate -10
+  829  git range-diff evidence/02-before~2..evidence/02-before HEAD~2..HEAD
+  830  git merge-base --is-ancestor base/task-02 HEAD
+  831  echo $?
+  832  git push --force-with-lease origin feature/task-02
