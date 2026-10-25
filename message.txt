@@ -1,1 +1,2 @@
 База для staged изменения
+staged change
