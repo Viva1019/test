@@ -1,0 +1,41 @@
+  994  git clone https://github.com/Viva1019/test clone-A-06
+  995  git clone https://github.com/Viva1019/test clone-B-06
+  996  cd ~/clone-A-06
+  997  git checkout feature/task-06
+  998  echo "local change from clone A" > local.txt
+  999  git add local.txt
+ 1000  git commit -m "feat - add local.txt L"
+ 1001  git log -1 --oneline
+ 1002  cd ~/clone-B-06
+ 1003  echo "remote change from clone A" > remote.txt
+ 1004  git add remote.txt
+ 1005  git commit -m "feat - add remote.txt R"
+ 1006  git push origin feature/task-06
+ 1007  git status
+ 1008  git push origin feature/task-06
+ 1009  git fetch origin
+ 1010  git checkout feature/task-06
+ 1011  git sttus
+ 1012  git status
+ 1013  git push origin feature/task-06
+ 1014  git log
+ 1015  ls
+ 1016  cd ~/clone-A-06
+ 1017  ls
+ 1018  cat local.txt
+ 1019  cat ~/clone-B-06/remote.txt
+ 1020  cd ~/clone-B-06
+ 1021  echo "remote change from clone A" > remote.txt
+ 1022  git add remote.txt
+ 1023  git commit -m "feat - add remote.txt R"
+ 1024  git push origin feature/task-06
+ 1025  git log -1 --oneline
+ 1026  cd ~/clone-A-06
+ 1027  git -c pull.ff=true pull --rebase origin feature/task-06
+ 1028  ls -l local.txt remote.txt
+ 1029  git log --oneline --graph -4
+ 1030  git log --graph -4
+ 1031  git cat-file -p HEAD | grep parent
+ 1032  git push origin feature/task-06
+ 1033  git log
+ 1034  git log -1 --oneline
