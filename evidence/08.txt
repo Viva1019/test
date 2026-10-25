@@ -1,0 +1,18 @@
+ 1062  git checkout feature/task-08
+ 1063  echo "staged change" >> message.txt
+ 1064  git add message.txt
+ 1065  echo "unstaged change" >> settings.ini
+ 1066  echo "draft content" > draft.txt
+ 1067  git status --short
+ 1068  git stash push -u -m "unfinished work"
+ 1069  git status
+ 1070  echo "urgent fix" > hotfix.txt
+ 1071  git add hotfix.txt
+ 1072  git commit -m "hotfix -  urgent fix"
+ 1073  git log -1 --oneline
+ 1074  git stash apply --index
+ 1075  git status --short
+ 1076  git stash drop
+ 1077  git add message.txt settings.ini draft.txt
+ 1078  git commit -m "feat -  restore unfinished work from stash"
+ 1079  git push origin feature/task-08
