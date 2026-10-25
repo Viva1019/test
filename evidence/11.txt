@@ -1,0 +1,30 @@
+ 1116  git checkout feature/task-11
+ 1117  git blame calc.py
+ 1118  cat check.py
+ 1119  git bisect start
+ 1120  git bisect bad lab-start
+ 1121  git bisect good history-good
+ 1122  python3 check.py
+ 1123  git bisect bad
+ 1124  python3 check.py
+ 1125  git bisect good
+ 1126  python3 check.py
+ 1127  git bisect bad
+ 1128  python3 check.py
+ 1129  git bisect bad
+ 1130  git rev-parse refs/bisect/bad
+ 1131  git bisect log > ~/manual-bisect-log.txt
+ 1132  git bisect reset
+ 1133  git bisect start
+ 1134  git bisect bad lab-start
+ 1135  git bisect good history-good
+ 1136  git bisect run python3 check.py
+ 1137  git rev-parse refs/bisect/bad
+ 1138  git bisect log > ~/auto-bisect-log.txt
+ 1139  git bisect reset
+ 1140  git show f9723d131f40309659b8ef23714f62603f3fe39c -- calc.py
+ 1141  nano calc.py
+ 1142  python3 check.py
+ 1143  git add calc.py
+ 1144  git commit -m "fix - fix calc.py"
+ 1145  git push origin feature/task-11
