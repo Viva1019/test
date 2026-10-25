@@ -1,0 +1,17 @@
+ 1040  git checkout feature/task-07
+ 1041  cd ~/git-practice
+ 1042  git checkout feature/task-07
+ 1043  echo "Release 1.0.0" > version.txt
+ 1044  git add version.txt
+ 1045  git commit -m "chore - release version 1.0.0"
+ 1046  git log -1 --oneline
+ 1047  echo "Release 1.1.0-rc1" >> version.txt
+ 1048  git add version.txt
+ 1049  git commit -m "chore - release version 1.1.0-rc1"
+ 1050  git log -1 --oneline
+ 1051  git tag -a v1.0.0 -m "training release 1.0.0"
+ 1052  git tag v1.1.0-rc1
+ 1053  git cat-file -t v1.0.0
+ 1054  git cat-file -t v1.1.0-rc1
+ 1055  git push origin feature/task-07
+ 1056  git push origin v1.0.0 v1.1.0-rc1
