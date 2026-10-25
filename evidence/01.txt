@@ -1,0 +1,39 @@
+  743 git reset --soft b4bde9d
+  744  git status --short
+  745  git diff --cached
+  746  git diff
+  747  cat reset-demo.txt
+  748  git push origin evidence/01-soft-before
+  749  git push --force-with-lease origin feature/task-01
+  750  git commit -m "reset 01 -  soft"
+  751  git push origin feature/task-01
+  752  git log --oneline --decorate -5
+  753  echo "A-mixed" > reset-demo.txt
+  754  git add reset-demo.txt
+  755  git commit -m "reset 01 - state A mixed"
+  756  echo "B-mixed" > reset-demo.txt
+  757  git add reset-demo.txt
+  758  git commit -m "reset 01 - state B mixed"
+  759  git tag evidence/01-mixed-before
+  760  git push origin --tags
+  761  git log --oneline -5
+  762  A=$(git rev-parse HEAD~1)
+  763  echo "$A"
+  764  git reset --mixed "$A"
+  765  git push --force-with-lease origin feature/task-01
+  766  git add reset-demo.txt
+  767  git commit -m "reset 01 - mixed"
+  768  git push origin feature/task-01
+  769  echo "A-hard" > reset-demo.txt
+  770  git add reset-demo.txt
+  771  git commit -m "reset 01 - state A hard"
+  772  echo "B-hard" > reset-demo.txt
+  773  git add reset-demo.txt
+  774  git commit -m "reset 01 - state B hard"
+  775  git tag evidence/01-hard-before
+  776  git push origin evidence/01-hard-before
+  777  A=$(git rev-parse HEAD~1)
+  778  git reset --hard "$A"
+  779  git push --force-with-lease origin feature/task-01
+  780  nano answers/01.md
+  781  echo "$A"
