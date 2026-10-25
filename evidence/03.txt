@@ -1,0 +1,52 @@
+  853  git tag evidence/03-before-amend
+  854  git show --stat --oneline HEAD
+  855  git log --oneline --reverse HEAD~4..HEAD
+  856  git commit --amend -m "story - complete changes"
+  857  git log -1 --oneline
+  858  git status
+  859  git push --force-with-lease origin feature/task-03
+  860  git log --oneline --decorate -6
+  861  git status
+  862  git tag evidence/03-before-rebase
+  863  git push origin evidence/03-before-amend
+  864  git push origin evidence/03-before-rebase
+  865  git rebase -i HEAD~4
+  866  git rebase --abort
+  867  git log --oneline -6
+  868  git rebase -i 5907624
+  869  git status
+  870  git log --oneline --decorate -6
+  871  git tag --list "evidence/03*"
+  872  git show --stat --oneline evidence/03-before-rebase
+  873  git show --stat --oneline evidence/03-before-amend
+  874  git rebase -i 5907624
+  875  git show --stat --oneline HEAD
+  876  git show --stat --oneline 8ba3d0b
+  877  git show --stat --oneline 61e868d
+  878  git log --oneline --all --decorate -10
+  879  git branch backup/task-03-current HEAD
+  880  git reset --hard evidence/03-before-rebase
+  881  git rebase -i 5907624
+  882  git log --oneline --decorate -6
+  883  git show --stat --oneline bf488a3
+  884  git show --stat --oneline 98f4039
+  885  git show --stat --oneline c427f28
+  886  git status
+  887  git rebase -i 5907624
+  888  git log --oneline --all --reflog -15
+  889  git show --stat --oneline 923f412
+  890  git show --stat --oneline d2bc451
+  891  git show --stat --oneline 61e868d
+  892  git show --stat --oneline 42a858b
+  893  git log --oneline --all -- story.txt
+  894  git show 923f412 -- story.txt
+  895  git show d2bc451 -- story.txt
+  896  git show 8ba3d0b -- story.txt
+  897  git branch backup/task-03-before-fix HEAD
+  898  git reset --hard evidence/03-before-rebase
+  899  git rebase -i 5907624
+  900  git reset --hard backup/task-03-before-fix
+  901  git log --oneline --decorate -5
+  902  git rev-parse HEAD^{tree}
+  903  git rev-parse evidence/03-before-amend^{tree}
+  904  git push --force-with-lease origin feature/task-03
