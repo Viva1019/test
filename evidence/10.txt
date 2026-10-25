@@ -1,0 +1,5 @@
+ 1104  git checkout feature/task-10
+ 1105  git log --oneline feature/source-10
+ 1106  git cherry-pick -x 7a74643
+ 1107  git log -1
+ 1108  ls -l
