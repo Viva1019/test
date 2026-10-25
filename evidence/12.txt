@@ -1,0 +1,22 @@
+ 1151  git checkout feature/task-12
+ 1152  nano .gitignore
+ 1153  ls
+ 1154  find --name ".gitignore"
+ 1155  find ".gitignore"
+ 1156  pwd
+ 1157  ls
+ 1158  ls -a
+ 1159  cat .gitignore
+ 1160  touch .env
+ 1161  touch .env.example
+ 1162  mkdir -p build __pycache__
+ 1163  touch build/output.txt
+ 1164  touch build/.gitkeep
+ 1165  touch __pycache__/demo.pyc
+ 1166  git check-ignore -v .env build/output.txt __pycache__/demo.pyc
+ 1167  git status --ignored --short
+ 1168  git rm --cached debug.log
+ 1169  git status --short
+ 1170  git add .gitignore .env.example build/.gitkeep
+ 1171  git commit -m "chore -  update .gitignore and untrack debug.log"
+ 1172  git push origin feature/task-12
