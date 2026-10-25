@@ -1,0 +1,17 @@
+  926  git checkout feature/task-04
+  927  git log --oneline -3
+  928  git revert 50dd23a
+  929  git push origin feature/task-04
+  930  echo "new_setting=true" >> settings.ini
+  931  echo "new_message_text" >> message.txt
+  932  git add settings.ini message.txt
+  933  git commit -m "feat -  update settings and message"
+  934  git log -1 --oneline
+  935  git restore --source=a78a1de^ -- settings.ini
+  936  git status
+  937  git add settings.ini
+  938  git commit -m "fix - restore settings.ini to previous state"
+  939  git log --oneline -4
+  940  git show HEAD --stat
+  941  cat message.txt
+  942  cat settings.ini
