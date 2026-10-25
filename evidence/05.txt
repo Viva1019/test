@@ -1,0 +1,27 @@
+  950  git clone https://github.com/Viva1019/test clone-B
+  951  ls
+  952  rmdir test
+  953  rmdir --help
+  954  rm --help
+  955  rm -r test
+  956  git clone https://github.com/Viva1019/test clone-A
+  957  ls
+  958  cd ~/clone-A
+  959  git checkout feature/task-05
+  960  echo "local change from clone A" > local.txt
+  961  git add local.txt
+  962  git commit -m "feat - add local.txt L"
+  963  git log -1 --oneline
+  964  cd ~/clone-B
+  965  git checkout feature/task-05
+  966  echo "remote change from clone B" > remote.txt\n
+  967  git add remote.txt\n
+  968  git commit -m "feat - add remote.txt R"
+  969  git push origin feature/task-05
+  970  git log -1 --oneline
+  971  cd ~/clone-A
+  972  git -c pull.ff=true pull --no-rebase origin feature/task-05
+  973  ls -l local.txt remote.txt
+  974  git cat-file -p HEAD | grep parent
+  975  git log --oneline --graph -4
+  976  git push origin feature/task-05
